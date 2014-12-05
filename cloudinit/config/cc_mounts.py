@@ -99,6 +99,7 @@ def handle(_name, cfg, cloud, log, _args):
         sanitized = sanitize_devname(start, cloud.device_name_to_device, log)
         if sanitized is None:
             log.debug("Ignorming nonexistant named mount %s", start)
+            cfgmnt[i][1] = None
             continue
 
         if sanitized != start:
